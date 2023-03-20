@@ -215,4 +215,7 @@ class Trajet
 
         return $this;
     }
+    public function __toString(){
+        return $this->villeDepart.'->'.$this->villeArrivee;
+    }
 }

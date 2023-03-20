@@ -32,7 +32,8 @@ class UserFixture extends Fixture
         $user2->setNom("TANCRAY")
         ->setPrenom("Manon")
         ->setEmail("manontancray@gmail.com")
-        ->setPassword("admin_manon")
+        ->setPassword($this->passwordEncoder->encodePassword(
+            $user2, 'admin_manon'))
         ->setRoles(["ROLE_ADMIN","ROLE_USER"]);
         $manager->persist($user2);
 
@@ -40,7 +41,8 @@ class UserFixture extends Fixture
         $user3->setNom("MIROIT")
         ->setPrenom("Robert")
         ->setEmail("robertmiroit@gmail.com")
-        ->setPassword("robertmiroit123")
+        ->setPassword($this->passwordEncoder->encodePassword(
+            $user3, 'roro19'))
         ->setRoles(["ROLE_USER"]);
         $manager->persist($user3);
 
@@ -48,7 +50,8 @@ class UserFixture extends Fixture
         $user4->setNom("COUET")
         ->setPrenom("Patricia")
         ->setEmail("patriciatcouet@gmail.com")
-        ->setPassword("0000")
+        ->setPassword($this->passwordEncoder->encodePassword(
+            $user4, 'patou_patou'))
         ->setRoles(["ROLE_USER"]);
         $manager->persist($user4);
 
@@ -56,7 +59,8 @@ class UserFixture extends Fixture
         $user5->setNom("CARDE")
         ->setPrenom("Paulette")
         ->setEmail("paulettecarde@gmail.com")
-        ->setPassword("1234567890")
+        ->setPassword($this->passwordEncoder->encodePassword(
+            $user5, '555555'))
         ->setRoles(["ROLE_USER"]);
         $manager->persist($user5);
 
