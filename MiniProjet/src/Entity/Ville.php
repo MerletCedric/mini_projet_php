@@ -133,6 +133,10 @@ class Ville
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> trajet_crud
     public function __toString()
     {
         return $this->nom.', '.$this->codePostal;
