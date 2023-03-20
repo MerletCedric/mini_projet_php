@@ -55,7 +55,7 @@ class Trajet
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $moedeleVoiture;
+    private $modeleVoiture;
 
     /**
      * @ORM\Column(type="integer")
@@ -162,14 +162,14 @@ class Trajet
         return $this;
     }
 
-    public function getMoedeleVoiture(): ?string
+    public function getModeleVoiture(): ?string
     {
-        return $this->moedeleVoiture;
+        return $this->modeleVoiture;
     }
 
-    public function setMoedeleVoiture(string $moedeleVoiture): self
+    public function setModeleVoiture(string $modeleVoiture): self
     {
-        $this->moedeleVoiture = $moedeleVoiture;
+        $this->modeleVoiture = $modeleVoiture;
 
         return $this;
     }
