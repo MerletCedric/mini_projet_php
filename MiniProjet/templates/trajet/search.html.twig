@@ -1,0 +1,21 @@
+{# templates/town/search.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Search for a town</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.villeDepart) }}
+        <button type="submit">Search</button>
+    {{ form_end(form) }}
+
+    {% if results|length > 0 %}
+        <h2>Search Results</h2>
+        <ul>
+            {% for villeDepart in results %}
+                <li>{{ villeDepart.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -85,4 +85,29 @@ class TrajetController extends AbstractController
 
         return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+     * @Route("/search", name="app_trajet_search", methods={"GET"}) 
+     */
+    public function searchAction(Request $request)
+    {
+        $form = $this->createForm(SearchFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nomVilleSearch = $form->get('nom_ville_search')->getData();
+
+            // perform database query to retrieve trips that start at the given town
+            $trips = $this->getDoctrine()->getRepository(Trajet::class)->findBy(['villeDepart' => $nomVilleSearch]);
+
+            return $this->render('trips.html.twig', [
+                'trips' => $trips,
+            ]);
+        }
+
+        return $this->render('search.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
 }

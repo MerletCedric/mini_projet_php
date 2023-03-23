@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div id="menu_accueil">
+        <form method="get" action="{{path('app_trajet_search', {villeDepart:form.nom_ville_search.value})}}">
+            <div class="input-group mb-3">
+                <input type="text" name="nom_ville_search" class="form-control" placeholder="Ville de départ ?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button class="input-group-text" type="submit" name="ville_search" id="basic-addon2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+        
+        <form method="get" action="{{path('app_avis_show')}}">
+            <div class="input-group mb-3">
+                <input type="text" name="nom_conducteur_search" class="form-control" placeholder="Trouver mon conducteur" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button class="input-group-text" type="submit" name="conducteur_search" id="basic-addon2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="d-flex flex-row">
+            <a href="{{path('app_trajet_new')}}" class=" p-2 block_accueil" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="margin-right:10px" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                    Créer un trajet
+            </a>
+            <a href="{{path('app_trajet_index')}}"class="block_accueil">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="margin-right:10px" fill="currentColor" class="bi bi-signpost-split" viewBox="0 0 16 16">
+                    <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z"/>
+                </svg>
+                Consulter les trajets
+            </a>
+        </div>
+    </div>
+{% endblock %}
