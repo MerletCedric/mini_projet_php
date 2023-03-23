@@ -1,9 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Avis index{% endblock %}
+{% block title %}Avis{% endblock %}
 
 {% block body %}
-    <h1>Avis index</h1>
+    <h1><strong>VOS AVIS</strong></h1>
+    <a id ="creer_avis"href="{{ path('app_avis_new') }}">Creer un nouvel avis</a> 
+    {% for avi in avis %}
+        <ol>
+            <li class="list-group-item d-flex justify-content-between align-items-start"id="avis" >
+                <div class="ms-2 me-auto">
+                <div class="list">{{ avi.users}} {{ avi.trajets }}</div>
+                    {{ avi.commentaire }}   
+                </div>
+                <span class="badge bg-primary rounded-pill">{{ avi.note }}</span>      
+            </li>
+        </ol>
+        <button type="button" class="btn btn-secondary button_show"><a href="{{ path('app_avis_show', {'id': avi.id}) }}" style="text-decoration:none; color:var(--txt-color)">détail</a></button>
+    
+    {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+    {% endfor %}
+    
+    {# <h1 id='tavis'>Avis index</h1>
 
     <table class="table">
         <thead>
@@ -35,5 +55,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_avis_new') }}">Create new</a>
+    <a href="{{ path('app_avis_new') }}">Create new</a> #}
 {% endblock %}
