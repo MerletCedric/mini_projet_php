@@ -1,0 +1,109 @@
+:root {
+  --bg-color: #ffffff;
+  --links: #000000;
+  --avis-color:#eceef3;
+}
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --links: #000000;
+    --avis-color:#eceef3;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #1a1c23;
+    --links: #FFFFFF;
+    --txt-color:#f0f0f0;
+    --h1:rgb(88, 14, 134);
+    --note-color:rgb(71, 28, 99);
+    --avis-color:#313235;
+    
+    
+  }
+
+body {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+}
+
+.container ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container ul li {
+  color: var(--links);
+  cursor: pointer;
+}
+
+h1{
+    color:var(--h1);
+    padding-bottom: 5%;
+    
+}
+#authentification{
+    width: 20%;
+    margin:auto;
+}
+#avis{
+    width: 70%;
+    margin:auto;
+    padding-top: 10px;
+    background-color: var(--avis-color);
+    border-radius: 30px;
+    height: 250px;
+    padding: 20px;
+    border:solid;
+    border-width: 0.5px;
+    border-color:#5f5e5e;
+    overflow: hidden;
+    
+}
+.button_show{
+    margin:auto;
+    background-color: var(--avis-color);
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--txt-color);
+    margin-bottom: 30px;
+}
+.list{
+    height: 100%;
+    border-bottom:solid;
+    border-width: 0.5px;
+    border-color:#5f5e5e;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+#creer_avis{
+    text-decoration: none;
+    color: var(--txt-color);
+    margin-bottom: 5%;
+}
+
+.block_accueil:hover {
+    background-color: rgb(78, 150, 238);
+}
+.block_accueil {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:98px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+    border-radius: 20px;
+    background-color: rgb(28, 186, 244);
+    border : none;
+    margin : 5px;
+    text-decoration: none;
+    color : white;
+}
+.color_nav{
+    background-color: var(--avis-color);
+    color: var(--txt-color);
+}
