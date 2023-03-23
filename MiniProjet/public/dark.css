@@ -1,10 +1,12 @@
 :root {
   --bg-color: #ffffff;
   --links: #000000;
+  --avis-color:#eceef3;
 }
 [data-theme="light"] {
     --bg-color: #ffffff;
     --links: #000000;
+    --avis-color:#eceef3;
   }
   
   [data-theme="dark"] {
@@ -19,7 +21,6 @@
   }
 
 body {
-  padding-top: 5%;
   text-align: center;
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-color);
@@ -83,4 +84,26 @@ h1{
     text-decoration: none;
     color: var(--txt-color);
     margin-bottom: 5%;
+}
+
+.block_accueil:hover {
+    background-color: rgb(78, 150, 238);
+}
+.block_accueil {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:98px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+    border-radius: 20px;
+    background-color: rgb(28, 186, 244);
+    border : none;
+    margin : 5px;
+    text-decoration: none;
+    color : white;
+}
+.color_nav{
+    background-color: var(--avis-color);
+    color: var(--txt-color);
 }

@@ -1,17 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}mon compte{% endblock %}
+{% block title %}Mon compte{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
 
-<div class="example-wrapper">
-    <h1>Mon compte</h1>
-    <p>Nom : {{ app.user.nom }}</p>
-    <p>Prénom : {{ app.user.prenom }}</p>
-    <p>E-mail : {{ app.user.email }}</p>
-</div>
+    <div class="example-wrapper">
+        <h1>Mon compte</h1>
+        <p>Nom : {{ app.user.nom }}</p>
+        <p>Prénom : {{ app.user.prenom }}</p>
+        <p>E-mail : {{ app.user.email }}</p>
+    </div>
+    {# {% for trajet in trajets %}
+        <p>Titre : {{ trajet.villeDepart}}</p>
+    {% endfor %} #}
+     {% for trajet in trajets %}
+            <li class="list-group-item">
+                <div>
+                    <a href="{{path('app_trajet_show', {id:trajet.id})}}">
+                        <strong>{{trajet.conducteur}}</strong> 
+                        {{trajet.dateDepart|date('d/m/Y')}} 
+                        {{trajet.heureDepart|date('h:m:s')}}
+                    </a> 
+                </div>    
+                {{trajet.villeDepart}} > {{trajet.villeArrivee}}
+                {{trajet.nbPlacesVoiture}}
+            </li>
+            {% else %}
+            <li>
+                Aucune données trouvées.
+            </li>
+        {% endfor %}
+
 {% endblock %}

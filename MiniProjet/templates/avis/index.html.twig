@@ -22,38 +22,4 @@
             <td colspan="4">no records found</td>
         </tr>
     {% endfor %}
-    
-    {# <h1 id='tavis'>Avis index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>utilisateur</th>
-                <th>Note</th>
-                <th>trajet</th>
-                <th>Commentaire</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for avi in avis %}
-            <tr>
-                <td>{{ avi.users}}</td>
-                <td>{{ avi.note }}</td>
-                <td>{{ avi.trajets }}</td>
-                <td>{{ avi.commentaire }}</td>
-
-                <td>
-                    <a href="{{ path('app_avis_show', {'id': avi.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_avis_new') }}">Create new</a> #}
 {% endblock %}
